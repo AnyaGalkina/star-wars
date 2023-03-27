@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/star-wars/static/css/main.3b8c363b.css",
-    "main.js": "/star-wars/static/js/main.fb19bc47.js",
+    "main.js": "/star-wars/static/js/main.362f38bc.js",
     "static/media/spoilers_drib.gif": "/star-wars/static/media/spoilers_drib.658167ee530852f4c7fc.gif",
     "static/media/yoda.png": "/star-wars/static/media/yoda.cc1472d9c79b9170f2c5.png",
     "static/media/deathStar.png": "/star-wars/static/media/deathStar.8b3b84cf8a38896a3798.png",
@@ -11,10 +11,10 @@
     "static/media/logo.png": "/star-wars/static/media/logo.1b3933cbe93efffc97d3.png",
     "index.html": "/star-wars/index.html",
     "main.3b8c363b.css.map": "/star-wars/static/css/main.3b8c363b.css.map",
-    "main.fb19bc47.js.map": "/star-wars/static/js/main.fb19bc47.js.map"
+    "main.362f38bc.js.map": "/star-wars/static/js/main.362f38bc.js.map"
   },
   "entrypoints": [
     "static/css/main.3b8c363b.css",
-    "static/js/main.fb19bc47.js"
+    "static/js/main.362f38bc.js"
   ]
 }
