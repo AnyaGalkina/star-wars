@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, memo } from 'react';
 
 import { useAppSelector } from '../../../app/hooks';
 import {
@@ -13,7 +13,7 @@ type PropsType = {
     onPageChanged: (pageNumber: number) => void;
 };
 
-export const Pagination = ({ onPageChanged }: PropsType): ReactElement => {
+export const Pagination = memo(({ onPageChanged }: PropsType): ReactElement => {
     const pageSize = useAppSelector(getPageSize);
     const currentPage = useAppSelector(getCurrentPage);
     const totalItemsCount = useAppSelector(getTotalCount);
@@ -22,13 +22,12 @@ export const Pagination = ({ onPageChanged }: PropsType): ReactElement => {
 
     const pages: Array<number> = [];
 
-    // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
     return (
-        <div style={{ marginBottom: '50px' }}>
+        <div style={{ margin: '20px 0 50px' }}>
             {pages.map(p => {
                 return (
                     <Page
@@ -41,4 +40,4 @@ export const Pagination = ({ onPageChanged }: PropsType): ReactElement => {
             })}
         </div>
     );
-};
+});
