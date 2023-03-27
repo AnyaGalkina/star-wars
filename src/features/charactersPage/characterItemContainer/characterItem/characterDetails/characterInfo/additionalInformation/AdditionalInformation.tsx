@@ -6,7 +6,7 @@ type PropsType = {
 };
 
 export const AdditionalInformation = ({ title, details}: PropsType): ReactElement | null => {
-    if (details === 'n/a') {
+    if (details === 'n/a' || details === 'none' || 'unknown') {
         return null;
     }
 
