@@ -1,0 +1,34 @@
+.headerContainer {
+    height: 93px;
+    background: #1F2A63;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: rgba(1, 28, 64, 0.2);
+    box-shadow: 0 4px 16px rgba(1, 28, 64, 0.2);
+    padding: 10px 10% 5px;
+    position: sticky;
+}
+
+.link {
+    font-size: 25px;
+    line-height: 29px;
+    color: #F6F7F9;
+    margin-left: 74px;
+    text-decoration: none;
+}
+
+.activeLink {
+    border-bottom: 3px solid #CFDAB0;
+}
+
+.logo {
+    width: 150px;
+    height: 90px;
+}
+
+@media screen and (max-width: 500px) {
+    .link {
+        font-size: 15px;
+    }
+}

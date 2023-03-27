@@ -1,0 +1,33 @@
+.pageNotFoundContainer {
+    min-height: 100vh;
+    padding: 10%;
+    background:linear-gradient(to bottom, #1F2A63, #17002F);
+}
+
+.button {
+    display: block;
+    margin: 30px auto;
+    border-color: #73D677;
+    background: #73D677;
+}
+
+.imageBlock{
+    display: block;
+    margin: 0 auto;
+}
+
+.img404 {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+}
+
+.imgPlanet {
+    position: sticky;
+    z-index: 5;
+    height: 42%;
+    width: 45%;
+}
+

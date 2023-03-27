@@ -1,0 +1,16 @@
+.imageContainer {
+    padding: 16.77px 10.46px 6.11px 12.77px;
+    background: #1F2A63;
+}
+
+.coloredBlock {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 900px) {
+    .img{
+        width: 150px;
+    }
+}

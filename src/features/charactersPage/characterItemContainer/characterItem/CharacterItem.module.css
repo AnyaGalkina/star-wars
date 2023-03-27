@@ -1,0 +1,23 @@
+.itemBlock {
+    background: #F0F0F0;
+    border-radius: 8px;
+    width: 300px;
+    height: 136.86px;
+    color: #212121;
+    margin: 0 11px 45.22px 0;
+    padding: 0px 25px;
+}
+
+.itemHeader {
+    margin: 5px 0 10px;
+    text-align: start;
+    font-size: 18px;
+    line-height: 21px;
+    text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+.flexBlock {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,24 @@
+.coloredBlock {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 16px 13px 0 0;
+}
+
+.male {
+    background-color: #73D677;
+}
+
+.female {
+    background-color: #C956FF;
+}
+
+.hermaphrodite {
+    background-color: #F5DB13;
+}
+
+.birthDay {
+    background-color: #07D6F2
+}

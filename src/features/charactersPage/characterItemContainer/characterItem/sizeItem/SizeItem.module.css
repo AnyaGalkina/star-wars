@@ -1,0 +1,27 @@
+.sizeItemContainer {
+    width: 45px;
+    height: 55px;
+    font-size: 15px;
+    line-height: 18px;
+    margin-right: 13px;
+}
+
+.sizeParamBlock {
+    width: 35.47px;
+    height: 36.6px;
+    border: 3px solid #212121;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 12px;
+    line-height: 14px;
+    color: #4B4B4B;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+}

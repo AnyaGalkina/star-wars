@@ -1,0 +1,54 @@
+.modalContainer {
+    position: fixed;
+    z-index: 21;
+    left: 50%;
+    top: 50%;
+    height: 411px;
+    width: 796.73px;
+    transform: translate(-50%, -50%);
+}
+
+.characterDetailsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    border-color: rgba(1, 28, 64, 0.2);
+    box-shadow: 0 4px 16px rgba(1, 28, 64, 0.2);
+    border-radius: 0 8px 8px 0;
+    background: linear-gradient(to bottom, #1F2A63, #17002F);
+}
+
+.closeBlock{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.invisibleBlock {
+    opacity: 0;
+    height: 40px;
+    padding: 5px 0;
+    background: #F0F0F0;
+    width: 766px;
+}
+
+.closeButton {
+    width: 30px;
+    height: 30px;
+    color: #212121;
+    font-weight: 800;
+    border: none;
+    z-index: 23;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .modalContainer{
+        width: 320px;
+    }
+    .invisibleBlock{
+        width: 320px;
+    }
+}
