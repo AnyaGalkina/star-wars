@@ -7,7 +7,8 @@ export const getLanguageFormat = (state: RootState): LanguageType =>
     state.characters.format;
 export const getCharactersOnPage = (state: RootState): CharacterType[] =>
     state.characters.charactersOnPage;
-export const getPrevCharactersOnPage = (state: RootState): CharacterType[] => state.characters.prevCharactersOnPage;
+export const getPrevCharactersOnPage = (state: RootState): CharacterType[] =>
+    state.characters.prevCharactersOnPage;
 export const getCharacter = (state: RootState): CharacterType =>
     state.characters.character;
 export const getTotalCount = (state: RootState): number => state.characters.count;

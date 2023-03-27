@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { SizeItem } from '../../sizeItem/SizeItem';
 
@@ -21,7 +21,7 @@ export const CharacterInfo = ({
     name,
     height,
     mass,
-}: PropsType) => {
+}: PropsType): ReactElement => {
     return (
         <div className={styles.dataBlock}>
             <h3 className={styles.name}>{name}</h3>

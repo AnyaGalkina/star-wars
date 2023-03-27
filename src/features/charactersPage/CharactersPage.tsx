@@ -1,8 +1,9 @@
-import React, {ReactElement, useEffect, useState} from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 
-import { getAppStatus } from '../../app/appSelectors';
+import { getAppError, getAppStatus } from '../../app/appSelectors';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { Header, Modal, Pagination, Preloader } from '../../common';
+import { ErrorMessage } from '../../common/components/errorMessage/ErrorMessage';
 
 import { CharacterDetails, CharacterItemContainer } from './characterItemContainer';
 import {
@@ -20,6 +21,7 @@ export const CharactersPage = (): ReactElement => {
 
     const count = useAppSelector(getTotalCount);
     const appStatus = useAppSelector(getAppStatus);
+    const appError = useAppSelector(getAppError);
     const characters = useAppSelector(getCharactersOnPage);
     const character = useAppSelector(getCharacter);
     const currentPage = useAppSelector(getCurrentPage);
@@ -27,22 +29,23 @@ export const CharactersPage = (): ReactElement => {
     const [isOpen, setIsOpen] = useState(false);
 
     const onPageChanged = (pageNumber: number): void => {
+        // @ts-ignore
         dispatch(setPage(pageNumber));
     };
 
     useEffect(() => {
+        // @ts-ignore
         dispatch(getCharacters());
     }, [currentPage]);
 
     return (
         <div>
             <Header />
+            {appError && <ErrorMessage />}
             {appStatus === 'loading' ? (
                 <Preloader />
             ) : (
                 <>
-                    {/* <LanguageSwitcher/> */}
-
                     <h2 className={styles.charactersPageHeader}>
                         {count} <strong>Peoples</strong> for you to choose your favorite
                     </h2>

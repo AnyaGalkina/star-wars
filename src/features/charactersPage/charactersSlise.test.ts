@@ -19,12 +19,11 @@ beforeEach(() => {
         character: {} as CharacterType,
         pageSize: 10,
         currentPage: 1,
-        sortBy: 'hair_color',
     };
 });
 
-
 test('current page should be changed to 2', () => {
+    // @ts-ignore
     const newState = charactersReducer(initialState, setPage(2));
 
     expect(newState.currentPage).toBe(2);
@@ -49,7 +48,7 @@ test('character shoud be set', () => {
         edited: '',
         url: '1',
     };
-
+    // @ts-ignore
     const newState = charactersReducer(initialState, setCharacter(newCharacter));
 
     expect(newState.character.name).toBe('Leia Organa');
@@ -112,7 +111,7 @@ test('characters should be set', () => {
             url: '1',
         },
     ];
-
+    // @ts-ignore
     const newState = charactersReducer(
         initialState,
         setCharacters({ characters, count: 10 }),
@@ -242,9 +241,8 @@ test('characters on page should be sorted by eye_color', () => {
         character: {} as CharacterType,
         pageSize: 10,
         currentPage: 1,
-        sortBy: 'eye_color',
     };
-
+    // @ts-ignore
     const newState = charactersReducer(initialState, sortCharacters('grey'));
 
     expect(newState.charactersOnPage.length).toBe(2);

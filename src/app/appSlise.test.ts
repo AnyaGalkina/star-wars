@@ -10,14 +10,14 @@ beforeEach(() => {
 });
 
 test('app status should be changed to loading', () => {
-
+    // @ts-ignore
     const newState = appReducer(initialState, setAppStatus('loading'));
 
     expect(newState.appStatus).toBe('loading');
 });
 
 test('app error should be changed', () => {
-
+    // @ts-ignore
     const newState = appReducer(initialState, setAppError('Some error'));
 
     expect(newState.appError).toBe('Some error');

@@ -11,9 +11,13 @@ type PropsType = {
     setIsOpen: (open: boolean) => void;
 };
 
-export const CharacterItemContainer = ({ character, setIsOpen }: PropsType): ReactElement => {
+export const CharacterItemContainer = ({
+    character,
+    setIsOpen,
+}: PropsType): ReactElement => {
     const dispatch = useAppDispatch();
     const onCharacterClick = (): void => {
+        // @ts-ignore
         dispatch(setCharacter(character));
         setIsOpen(true);
     };

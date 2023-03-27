@@ -11,6 +11,7 @@ export const ValueSelect = memo(() => {
     const [value, onChangeOption] = useState('');
     const allValues: string[] = ['All'];
 
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < characters.length; i++) {
         allValues.push(characters[i].eye_color);
     }

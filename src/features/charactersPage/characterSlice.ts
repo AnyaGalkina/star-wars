@@ -16,7 +16,6 @@ const initialState = {
     character: {} as CharacterType,
     pageSize: 10,
     currentPage: 1,
-    sortBy: 'eye_color',
 };
 
 // @ts-ignore
@@ -79,13 +78,15 @@ export const charactersSlice = createSlice({
             state.currentPage = action.payload;
         },
         sortCharacters(state: InitialStateType, action: PayloadAction<string>) {
+            const sortBy = 'eye_color';
+
             if (action.payload === 'All') {
                 if (state.prevCharactersOnPage.length > 0) {
                     state.charactersOnPage = state.prevCharactersOnPage;
                 }
             } else {
                 const sortedCharacters = state.prevCharactersOnPage.filter(
-                    character => character[state.sortBy] === action.payload,
+                    character => character[sortBy] === action.payload,
                 );
 
                 state.charactersOnPage = sortedCharacters;

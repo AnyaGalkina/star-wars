@@ -1,25 +1,29 @@
-import React from 'react';
-import {clearGlobalError} from '../../../app/app-reducer';
-import {useDispatch, useSelector} from 'react-redux';
-import {AppStateType} from '../../../app/redux-store';
-import styles from './ErrorMessage.module.css';
-import {Button} from 'antd';
+import React, { ReactElement } from 'react';
 
-export const ErrorMessage = () => {
-    const dispatch = useDispatch();
-    const globalError = useSelector<AppStateType, string>(state => state.app.globalError);
+import { getAppError } from '../../../app/appSelectors';
+import { setAppError } from '../../../app/appSlice';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { Button } from '../button/Button';
+
+import styles from './ErrorMessage.module.css';
+
+export const ErrorMessage = (): ReactElement => {
+    const dispatch = useAppDispatch();
+    const globalError = useAppSelector(getAppError);
 
     return (
         <div className={styles.errorBlock}>
             <div>
                 <span>{globalError}</span>
             </div>
-            <Button danger
-                    className={styles.button}
-                    onClick={() => {
-                        dispatch(clearGlobalError());
-                    }}>X
-            </Button>
+            <Button
+                additionalStyle={styles.button}
+                onClick={() => {
+                    // @ts-ignore
+                    dispatch(setAppError(null));
+                }}
+                title="X"
+            />
         </div>
     );
 };
