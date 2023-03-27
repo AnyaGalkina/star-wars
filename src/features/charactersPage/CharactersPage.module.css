@@ -6,9 +6,9 @@
 }
 
 .charactersPageHeader {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-size: 35px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);font-size: 35px;
     line-height: 41px;
     text-align: center;
     letter-spacing: 3px;
+    padding: 0 10%;
 }
-

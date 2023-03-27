@@ -7,7 +7,6 @@ import App from './App';
 import { store } from './app/store';
 
 import './index.css';
-// eslint-disable-next-line import/order
 import { HashRouter } from 'react-router-dom';
 
 const container = document.getElementById('root')!;

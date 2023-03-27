@@ -5,10 +5,7 @@ type PropsType = {
     title: string;
 };
 
-export const AdditionalInformation = ({
-    title,
-    details,
-}: PropsType): ReactElement | null => {
+export const AdditionalInformation = ({ title, details}: PropsType): ReactElement | null => {
     if (details === 'n/a') {
         return null;
     }

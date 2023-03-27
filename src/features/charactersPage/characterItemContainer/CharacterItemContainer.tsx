@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, {ReactElement, memo, useCallback} from 'react';
 
 import { useAppDispatch } from '../../../app/hooks';
 import { CharacterType } from '../charactersAPI';
@@ -11,16 +11,12 @@ type PropsType = {
     setIsOpen: (open: boolean) => void;
 };
 
-export const CharacterItemContainer = ({
-    character,
-    setIsOpen,
-}: PropsType): ReactElement => {
+export const CharacterItemContainer = memo(({ character, setIsOpen}: PropsType): ReactElement => {
     const dispatch = useAppDispatch();
-    const onCharacterClick = (): void => {
-        // @ts-ignore
+    const onCharacterClick = useCallback((): void => {
         dispatch(setCharacter(character));
         setIsOpen(true);
-    };
+    }, [character]);
 
     return <CharacterItem character={character} onCharacterClick={onCharacterClick} />;
-};
+});

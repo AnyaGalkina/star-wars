@@ -6,6 +6,7 @@
     height: 411px;
     width: 796.73px;
     transform: translate(-50%, -50%);
+    cursor: default;
 }
 
 .characterDetailsContainer {

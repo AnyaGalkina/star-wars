@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement, memo } from 'react';
 
 import styles from './SizeItem.module.css';
 
@@ -8,7 +8,7 @@ type PropsType = {
     classNameWrapper?: string;
 };
 
-export const SizeItem = ({ sizeParam, sizeTitle, classNameWrapper }: PropsType) => {
+export const SizeItem = memo(({ sizeParam, sizeTitle, classNameWrapper }: PropsType): ReactElement | null => {
     if (sizeParam === 'unknown') {
         return null;
     }
@@ -21,4 +21,4 @@ export const SizeItem = ({ sizeParam, sizeTitle, classNameWrapper }: PropsType) 
             </div>
         </div>
     );
-};
+});

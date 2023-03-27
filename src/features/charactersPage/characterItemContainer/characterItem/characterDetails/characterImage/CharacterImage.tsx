@@ -13,9 +13,7 @@ type PropsType = {
 };
 
 export const CharacterImage = ({ gender, birthYear }: PropsType): ReactElement => {
-    const srcPath =
-        // eslint-disable-next-line no-nested-ternary
-        gender === 'male' ? iconMale : gender === 'female' ? iconFemale : icon;
+    const srcPath = gender === 'male' ? iconMale : gender === 'female' ? iconFemale : icon;
 
     return (
         <div className={styles.imageContainer}>

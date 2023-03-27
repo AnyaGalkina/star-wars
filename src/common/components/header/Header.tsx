@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, memo } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ const navItems = [
     { id: '2', title: 'Characters', path: ROUTES.CHARACTERS },
 ];
 
-export const Header = (): ReactElement => {
+export const Header = memo((): ReactElement => {
     return (
         <div className={styles.headerContainer}>
             <div>
@@ -38,4 +38,4 @@ export const Header = (): ReactElement => {
             </nav>
         </div>
     );
-};
+});

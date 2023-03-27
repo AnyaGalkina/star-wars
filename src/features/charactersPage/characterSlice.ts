@@ -1,37 +1,29 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import { setAppError, setAppStatus } from '../../app/appSlice';
-import { RootState } from '../../app/store';
+import {setAppError, setAppStatus} from '../../app/appSlice';
+import {RootState} from '../../app/store';
 
-import { charactersAPI, CharacterType, ParamsType } from './charactersAPI';
+import {charactersAPI, CharacterType, ParamsType} from './charactersAPI';
 
-export type LanguageType = '' | 'wookiee';
 export type InitialStateType = typeof initialState;
 
 const initialState = {
     charactersOnPage: [] as CharacterType[],
     prevCharactersOnPage: [] as CharacterType[],
     count: 0,
-    format: '' as LanguageType,
     character: {} as CharacterType,
     pageSize: 10,
     currentPage: 1,
+    sortBy: 'eye_color',
 };
 
-// @ts-ignore
-export const getCharacters = createAsyncThunk(
-    'characters/getCharacters',
-    async (_, { dispatch, getState }) => {
-        // @ts-ignore
+export const getCharacters = createAsyncThunk('characters/getCharacters', async (_, {dispatch, getState}) => {
         dispatch(setAppStatus('loading'));
 
         const state = getState() as RootState;
-        const { format, currentPage } = state.characters;
+        const {currentPage} = state.characters;
         const params: ParamsType = {};
 
-        if (format) {
-            params.format = format;
-        }
         if (currentPage) {
             params.page = currentPage.toString();
         }
@@ -39,7 +31,6 @@ export const getCharacters = createAsyncThunk(
         try {
             const response = await charactersAPI.getCharacters(params);
 
-            // @ts-ignore
             dispatch(
                 setCharacters({
                     characters: response.data.results,
@@ -47,10 +38,8 @@ export const getCharacters = createAsyncThunk(
                 }),
             );
         } catch (e: any) {
-            // @ts-ignore
             dispatch(setAppError('Some error occurred'));
         } finally {
-            // @ts-ignore
             dispatch(setAppStatus('idle'));
         }
     },
@@ -68,9 +57,6 @@ export const charactersSlice = createSlice({
             state.charactersOnPage = action.payload.characters;
             state.prevCharactersOnPage = state.charactersOnPage;
         },
-        setLanguage(state: InitialStateType, action: PayloadAction<LanguageType>) {
-            state.format = action.payload;
-        },
         setCharacter(state: InitialStateType, action: PayloadAction<CharacterType>) {
             state.character = action.payload;
         },
@@ -78,23 +64,22 @@ export const charactersSlice = createSlice({
             state.currentPage = action.payload;
         },
         sortCharacters(state: InitialStateType, action: PayloadAction<string>) {
-            const sortBy = 'eye_color';
+            const sortBy = state.sortBy;
+            debugger
 
             if (action.payload === 'All') {
                 if (state.prevCharactersOnPage.length > 0) {
                     state.charactersOnPage = state.prevCharactersOnPage;
                 }
             } else {
-                const sortedCharacters = state.prevCharactersOnPage.filter(
+                state.charactersOnPage = state.prevCharactersOnPage.filter(
+                    // @ts-ignore
                     character => character[sortBy] === action.payload,
                 );
-
-                state.charactersOnPage = sortedCharacters;
             }
         },
     },
 });
 
 export const charactersReducer = charactersSlice.reducer;
-export const { setCharacters, setLanguage, setCharacter, setPage, sortCharacters } =
-    charactersSlice.actions;
+export const {setCharacters, setCharacter, setPage, sortCharacters} = charactersSlice.actions;

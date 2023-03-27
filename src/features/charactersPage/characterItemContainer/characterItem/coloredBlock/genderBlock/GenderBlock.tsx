@@ -8,7 +8,6 @@ type PropsType = {
 
 export const GenderBlock = ({ gender }: PropsType): ReactElement | null => {
     const genderStyle = `${styles.coloredBlock} ${
-        // eslint-disable-next-line no-nested-ternary
         gender === 'male'
             ? styles.male
             : gender === 'female'

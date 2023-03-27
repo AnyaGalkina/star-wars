@@ -1,13 +1,13 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, memo } from 'react';
 
 import styles from './Filter.module.css';
 import { ValueSelect } from './valueSelect/ValueSelect';
 
-export const Filters = (): ReactElement => {
+export const Filters = memo((): ReactElement => {
     return (
         <div className={styles.filtersContainer}>
             <span>eye color </span>
             <ValueSelect />
         </div>
     );
-};
+});

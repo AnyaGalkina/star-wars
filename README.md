@@ -4,11 +4,13 @@ Mobile responsive App helps to find data about your favorite characters within t
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
 ## App Screenshots
-![Project screenshot](/src/common/assets/images/screens/Screenshot1.png)
+
+![Project screenshot](/src/common/assets/images/screens/Screenshot0.png)
 ![Project screenshot](/src/common/assets/images/screens/Screenshot2.png)
 ![Project screenshot](/src/common/assets/images/screens/Screenshot3.png)
-![Project screenshot](/src/common/assets/images/screens/Screenshot0.png)
 ![Project screenshot](/src/common/assets/images/screens/Screenshot.png)
+![Project screenshot](/src/common/assets/images/screens/Screenshot1.png)
+
 
 ### Start the project
 To get a local copy up and running follow these simple example steps.
@@ -17,16 +19,10 @@ To get a local copy up and running follow these simple example steps.
 - Use `yarn start` to start project.
 - Use `yarn run test` to run unit tests.
 
-## StoryBook Screenshots
-![Project screenshot](/src/common/assets/images/screens/ScreenshotSB0.png)
-![Project screenshot](/src/common/assets/images/screens/ScreenshotSB1.png)
-![Project screenshot](/src/common/assets/images/screens/ScreenshotSB2.png)
-
 ## Technologies Used
 
 - **Axios**
 - **GH-pages**
-- **Eslint**
 - **Jest (unit tests)**
 - **React** and **@types/react**
 - **React-redux** and **@types/react-redux**
@@ -35,3 +31,10 @@ To get a local copy up and running follow these simple example steps.
 - **Redux-thunk**
 - **StoryBook**
 - **Typescript**
+
+## StoryBook Screenshots
+![Project screenshot](/src/common/assets/images/screens/ScreenshotSB0.png)
+![Project screenshot](/src/common/assets/images/screens/ScreenshotSB1.png)
+![Project screenshot](/src/common/assets/images/screens/ScreenshotSB2.png)
+
+

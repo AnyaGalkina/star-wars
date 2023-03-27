@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, memo } from 'react';
 
 import styles from '../CharacterItem.module.css';
 
@@ -10,11 +10,11 @@ type PropsType = {
     birthYear: string;
 };
 
-export const ColoredBlock = ({ gender, birthYear }: PropsType): ReactElement => {
+export const ColoredBlock = memo(({ gender, birthYear }: PropsType): ReactElement => {
     return (
         <div className={styles.flexBlock}>
             <GenderBlock gender={gender} />
             <BirthYearBlock birthYear={birthYear} />
         </div>
     );
-};
+});

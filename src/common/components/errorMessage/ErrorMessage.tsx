@@ -11,6 +11,10 @@ export const ErrorMessage = (): ReactElement => {
     const dispatch = useAppDispatch();
     const globalError = useAppSelector(getAppError);
 
+    const onErrorCloseClick = () => {
+        dispatch(setAppError(null));
+    }
+
     return (
         <div className={styles.errorBlock}>
             <div>
@@ -18,10 +22,7 @@ export const ErrorMessage = (): ReactElement => {
             </div>
             <Button
                 additionalStyle={styles.button}
-                onClick={() => {
-                    // @ts-ignore
-                    dispatch(setAppError(null));
-                }}
+                onClick={onErrorCloseClick}
                 title="X"
             />
         </div>

@@ -5,7 +5,8 @@
     height: 136.86px;
     color: #212121;
     margin: 0 11px 45.22px 0;
-    padding: 0px 25px;
+    padding: 0 25px;
+    cursor: pointer;
 }
 
 .itemHeader {

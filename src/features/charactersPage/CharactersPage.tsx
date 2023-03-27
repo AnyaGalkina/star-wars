@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, {ReactElement, useCallback, useEffect, useState} from 'react';
 
 import { getAppError, getAppStatus } from '../../app/appSelectors';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -28,13 +28,11 @@ export const CharactersPage = (): ReactElement => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const onPageChanged = (pageNumber: number): void => {
-        // @ts-ignore
+    const onPageChanged = useCallback((pageNumber: number): void => {
         dispatch(setPage(pageNumber));
-    };
+    }, []);
 
     useEffect(() => {
-        // @ts-ignore
         dispatch(getCharacters());
     }, [currentPage]);
 
